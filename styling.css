@@ -1,0 +1,8 @@
+body {
+    min-height: 100vh;
+    background: url(./img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(233, 233, 233);
+    font-family: "Quattrocento Sans", sans-serif;
+}
