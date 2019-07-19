@@ -11,32 +11,34 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     font-family: sans-serif;
-    color: rgb(233, 233, 233);
+    color: #ffffff;
 }
 
 header h1 {
     text-align: center;
-    margin: 40px;
+    margin: 20px;
     font-size: 3rem;
 }
 
 .row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    position: relative;
+  
 }
 
 .measurement {
-    background-color: grey;
+    background-color: rgba(128, 128, 128, 0.3);
     padding: 10px;
     text-align: center;
-    width: 22%;
+    width: 20%;
+    border-radius: 5px;
 }
-
 
 .typingIcon img {
-   width: 100px;
+   width: 75px;
 }
 
-
+.value {
+    font-size: 25px;
+}
