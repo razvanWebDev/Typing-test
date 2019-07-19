@@ -1,8 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     min-height: 100vh;
-    background: url(./img/background.jpg);
+    background: linear-gradient(rgba(8, 8, 8, 0.7) 0%, rgba(8, 8, 8, 0.7) 100%),
+        url(./img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: sans-serif;
     color: rgb(233, 233, 233);
-    font-family: "Quattrocento Sans", sans-serif;
 }
+
+header h1 {
+    text-align: center;
+    margin: 40px;
+    font-size: 3rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.measurement {
+    background-color: grey;
+    padding: 10px;
+    text-align: center;
+    width: 22%;
+}
+
+
+.typingIcon img {
+   width: 100px;
+}
+
+
