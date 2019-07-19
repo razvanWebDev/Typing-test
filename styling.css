@@ -1,3 +1,4 @@
+/* general */
 * {
     padding: 0;
     margin: 0;
@@ -6,6 +7,7 @@
 
 body {
     min-height: 100vh;
+    padding: 0 20px;
     background: linear-gradient(rgba(8, 8, 8, 0.7) 0%, rgba(8, 8, 8, 0.7) 100%),
         url(./img/background.jpg);
     background-size: cover;
@@ -14,24 +16,30 @@ body {
     color: #ffffff;
 }
 
+/* header */
 header h1 {
     text-align: center;
     margin: 20px;
     font-size: 3rem;
 }
 
+/* typing boxes */
 .row {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-  
+}
+
+.meas-box {
+    width: 20%;
+    text-align: center;
 }
 
 .measurement {
     background-color: rgba(128, 128, 128, 0.3);
     padding: 10px;
     text-align: center;
-    width: 20%;
+   
     border-radius: 5px;
 }
 
@@ -41,4 +49,20 @@ header h1 {
 
 .value {
     font-size: 25px;
+}
+
+.change {
+    height: 25px;
+    width: 25px;
+    background-color: aqua;
+    font-size: 16px;
+}
+
+/* text content */
+#content {
+    text-align: center;
+    height: 100px;
+    background-color: rgba(128, 128, 128, 0.3);
+    margin: 10px auto;
+    border-radius: 5px;
 }
