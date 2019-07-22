@@ -29,7 +29,7 @@ header h1 {
 
 /* typing boxes */
 .row {
-    width: 100%;    
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,7 +47,7 @@ header h1 {
 }
 
 .typingIcon img {
-   width: 75px;
+    width: 75px;
 }
 
 .value {
@@ -76,15 +76,29 @@ header h1 {
 /* reset button */
 #reset {
     display: inline;
-    border: 1px solid white;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.3);
     font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
     padding: 10px 30px;
     margin: 20px;
     cursor: pointer;
 }
 
 #reset:hover {
-    background-color: rgba(128, 128, 128, 0.3);
+    background-color: rgba(128, 128, 128, 0.5);
     transition: all 0.1s ease-in-out;
+}
+
+#reset:active {
+    transform: scale(0.95);
+}
+
+@keyframes pressBtn {
+    from {
+        transform: translateX(0);
+    }
+    to {
+    }
 }
