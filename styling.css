@@ -20,6 +20,10 @@ body {
     align-items: center;
 }
 
+::selection {
+    background: rgba(128, 128, 128, 0.6);
+}
+
 /* header */
 header h1 {
     text-align: center;
