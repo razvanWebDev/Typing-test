@@ -81,4 +81,10 @@ header h1 {
     font-size: 30px;
     padding: 10px 30px;
     margin: 20px;
+    cursor: pointer;
+}
+
+#reset:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    transition: all 0.1s ease-in-out;
 }
