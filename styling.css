@@ -14,6 +14,10 @@ body {
     background-repeat: no-repeat;
     font-family: sans-serif;
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /* header */
@@ -25,6 +29,7 @@ header h1 {
 
 /* typing boxes */
 .row {
+    width: 100%;    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +67,18 @@ header h1 {
 #content {
     text-align: center;
     height: 150px;
+    width: 100%;
     background-color: rgba(128, 128, 128, 0.3);
     margin: 10px auto;
     border-radius: 5px;
+}
+
+/* reset button */
+#reset {
+    display: inline;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 30px;
+    padding: 10px 30px;
+    margin: 20px;
 }
