@@ -7,7 +7,7 @@
 
 body {
     min-height: 100vh;
-    padding: 0 20px;
+    padding: 0 50px;
     background: linear-gradient(rgba(8, 8, 8, 0.7) 0%, rgba(8, 8, 8, 0.7) 100%),
         url(./img/background.jpg);
     background-size: cover;
@@ -70,11 +70,13 @@ header h1 {
 /* text content */
 #content {
     text-align: center;
-    height: 150px;
+    height: 119px;
     width: 100%;
     background-color: rgba(128, 128, 128, 0.3);
-    margin: 10px auto;
     border-radius: 5px;
+    font-size: 30px;
+    padding: 10px;
+    overflow: hidden;
 }
 
 /* reset button */
@@ -99,10 +101,15 @@ header h1 {
     transform: scale(0.95);
 }
 
-@keyframes pressBtn {
-    from {
-        transform: translateX(0);
-    }
-    to {
-    }
+/* input */
+#input {
+    width: 100%;
+    border: none;
+    outline: none;
+    
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.1);
+    font-size: 30px;
+    padding: 10px;
+    color: white;
 }
