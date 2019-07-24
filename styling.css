@@ -129,3 +129,37 @@ header h1 {
 #restart:active {
     transform: scale(0.95);
 }
+
+/* modal */
+#myModal {
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-content {
+    width: 60%;
+    height: 60vh;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: whitesmoke;
+    color: black;
+}
