@@ -8,6 +8,22 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
     return {
         //init function, initializes the test before start
         init: function(duration, textNumber) {
+            //fill list of testwords
+
+            //set the total test time
+
+            //update the time left
+
+            //move to a new word
+
+            //set active word
+
+            //format active word
+
+            //focus on the input
+
+            //add event listeners
+
             addEventListeners();
         }
     };
