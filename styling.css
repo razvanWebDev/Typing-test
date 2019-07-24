@@ -24,6 +24,20 @@ body {
     background: rgba(128, 128, 128, 0.6);
 }
 
+.scoreDown,
+.scoreUp {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.scoreDown {
+    background-color: mediumvioletred;
+}
+
+.scoreUp {
+    background-color: greenyellow;
+}
+
 /* header */
 header h1 {
     text-align: center;
@@ -79,7 +93,6 @@ header h1 {
     overflow: hidden;
 }
 
-
 /* input */
 #input {
     width: 100%;
@@ -98,23 +111,21 @@ header h1 {
 }
 
 /* reset button */
-#reset {
+#restart {
     display: inline;
     border-radius: 30px;
     background-color: rgba(128, 128, 128, 0.3);
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-size: 20px;
     padding: 5px 30px;
     margin: 20px;
     cursor: pointer;
 }
 
-#reset:hover {
+#restart:hover {
     background-color: rgba(128, 128, 128, 0.5);
     transition: all 0.1s ease-in-out;
 }
 
-#reset:active {
+#restart:active {
     transform: scale(0.95);
 }
