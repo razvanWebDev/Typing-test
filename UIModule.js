@@ -1,18 +1,18 @@
 var UIModule = (function(){
     
     //classes used to select HTML elements
-    var DOMElements = {
-        //indicators - test control
-        timeLeft, //HTML element displaying time left
-        //test results
-        wpm,wpmChange,cpm,cpmChange,accuracy,accuracyChange,
-        //user input
-        textInput,nameInput,
-        //test words
-        content,activeWord,
-        //modal
-        modal
-    };
+    // var DOMElements = {
+    //     //indicators - test control
+    //     timeLeft, //HTML element displaying time left
+    //     //test results
+    //     wpm,wpmChange,cpm,cpmChange,accuracy,accuracyChange,
+    //     //user input
+    //     textInput,nameInput,
+    //     //test words
+    //     content,activeWord,
+    //     //modal
+    //     modal
+    // };
 
     
     return {
