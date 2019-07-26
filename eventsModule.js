@@ -9,8 +9,11 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
         //init function, initializes the test before start
         init: function(duration, textNumber) {
             //fill list of testwords
+            var lineReturn = dModule.getLineReturn();
             var words = wModule.getWords(textNumber);
             dModule.fillListOfTestWords(textNumber, words);
+            var testWords = dModule.getListofTestWords() ;
+            uModule.fillContent(testWords, lineReturn);
             //set the total test time
 
             //update the time left

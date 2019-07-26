@@ -22,6 +22,7 @@ var dataModule = (function() {
         newString = firstCharCap + remainingChar;
         return newString;
     };
+    
 
     //capitalize random function
     var capitalizeRandom = function(arrayOfStrings) {
@@ -35,12 +36,14 @@ var dataModule = (function() {
     var addRandomPunctuation = function(arrayOfStrings) {
         return arrayOfStrings.map(function(currentWord){
             var randomPunctuation;
-            var items = [lineReturn, "?", ",", ",", ",", ",", ",",",", ",", ".",".",".",".",".",".", "!", "", "", "", "","", "","","","","","", "", "","",""];
+            var items = [lineReturn, "|","?","?","?","?","?", ",", ",", ",", ",", ",",",", ",", ".",".",".",".",".",".", "!","!","!","!","!", "", "", "", "","", "","","","","","", "", "","",""];
             var randomIndex = Math.floor(Math.random() * items.length);
             randomPunctuation = items[randomIndex];
             return currentWord + randomPunctuation;
         })
     };
+
+  
 
 
     var appData = {
@@ -110,8 +113,8 @@ var dataModule = (function() {
 
         //test words
         // fills words.testWords
-        fillListOfTestWords(textNumber, words) {
-            var result = words.split("");
+        fillListOfTestWords: function(textNumber, words) {
+            var result = words.split(" ");
             if (textNumber == 0) {
                 //shuffle words
                 result = shuffle(result);
@@ -122,11 +125,25 @@ var dataModule = (function() {
             }
             appData.words.testWords = result;
         },
+       
 
-        getListofTestWords() {}, // get list of test words: words.testWords
+         // get list of test words: words.testWords
+        getListofTestWords() {
+            return appData.words.testWords;
+        },
 
         moveToNewWord: function() {}, // increments the currentWordIndex - updates the current word (appData.words.currentWord) by creating a new instance of the word class - updates numOfCorrectWords, numOfCorrectCharacters and numOfTestCharacters
 
-        updateCurrentWord: function(value) {} // updates current word using user input
+        updateCurrentWord: function(value) {}, // updates current word using user input
+    
+        getLineReturn(){
+            return lineReturn;
+        },
+
+        returnData(){
+            console.log(appData);
+        }
+  
     };
+ 
 })();
