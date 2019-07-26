@@ -1,4 +1,5 @@
 var dataModule = (function() {
+    //shufle function
     var shuffle = function(array) {
         var newArray = [];
         var randomIndex;
@@ -10,6 +11,23 @@ var dataModule = (function() {
             array.splice(randomIndex, 1);
         }
         return newArray;
+    };
+
+    //capitalize first letter of a string
+    String.prototype.capitalize = function() {
+        var newString = "";
+        var firstCharCap = this.charAt(0).toUpperCase();
+        var remainingChar = this.slice(1);
+        newString = firstCharCap + remainingChar;
+        return newString;
+    };
+
+    //capitalize random function
+    var capitalizeRandom = function(arrayOfStrings) {
+        return arrayOfStrings.map(function(currentWord) {
+            var x = Math.floor(Math.random()*4);
+            return (x == 3) ? currentWord.capitalize() : currentWord;
+        });
     };
 
 
