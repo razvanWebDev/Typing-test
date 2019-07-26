@@ -1,4 +1,5 @@
 var dataModule = (function() {
+    var lineReturn = "|";
     //shufle function
     var shuffle = function(array) {
         var newArray = [];
@@ -28,6 +29,17 @@ var dataModule = (function() {
             var x = Math.floor(Math.random()*4);
             return (x == 3) ? currentWord.capitalize() : currentWord;
         });
+    };
+
+    //add random punctuation function
+    var addRandomPunctuation = function(arrayOfStrings) {
+        return arrayOfStrings.map(function(currentWord){
+            var randomPunctuation;
+            var items = [lineReturn, "?", ",", ",", ",", ",", ",",",", ",", ".",".",".",".",".",".", "!", "", "", "", "","", "","","","","","", "", "","",""];
+            var randomIndex = Math.floor(Math.random() * items.length);
+            randomPunctuation = items[randomIndex];
+            return currentWord + randomPunctuation;
+        })
     };
 
 
@@ -102,8 +114,11 @@ var dataModule = (function() {
             var result = words.split("");
             if (textNumber == 0) {
                 //shuffle words
+                result = shuffle(result);
                 //capitailse random strings
+                result = capitalizeRandom(result);
                 //add random punctuation
+                result = addRandomPunctuation(result);
             }
             appData.words.testWords = result;
         },
