@@ -1,6 +1,40 @@
 var eventsModule = (function(dModule, uModule, cModule, wModule) {
     var addEventListeners = function() {
         //character typing event listener
+        uModule.getDOMElements().textInput.addEventListener("keypress", function(event){
+            //check if test ended, do nothing
+            if(dModule.testEnded()){
+                return;
+            }
+
+            //if test has not started yet, start test,countdown
+            if(!dModule.testStarted()){
+                //start the test
+            }
+
+            //get typed word
+            var typedWord = uModule.getTypedWord();
+
+            //update current word
+            dModule.updateCurrentWord(typedWord);
+
+            //format active word
+
+            //check if the user pressed space or enter
+            if(uModule.spacePressed() || uModule.enterPressed()){
+                //empty  text input
+
+                //deactivate current word
+
+                //move to new word
+
+                //set active word
+
+                //format active word
+
+                //scroll new word into view
+            };
+        });
         //click on download button event listener
         //click on restart button event listener
     };

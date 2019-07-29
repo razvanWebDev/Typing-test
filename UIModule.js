@@ -48,7 +48,11 @@ var UIModule = (function() {
     return {
         //get DOM elements
 
-        getDOMElements() {},
+        getDOMElements() {
+            return {
+                textInput: DOMElements.textInput
+            }
+        },
 
         //Indicators - Test Control
 
@@ -80,7 +84,9 @@ var UIModule = (function() {
 
         emptyInput: function() {},
 
-        getTypedWord: function() {},
+        getTypedWord: function() {
+            return DOMElements.textInput.nodeValue;
+        },
 
         //test words
 

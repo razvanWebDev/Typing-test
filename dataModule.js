@@ -124,7 +124,7 @@ var dataModule = (function() {
 
         //characters values correct vs user
         this.characters = {
-            correct: this.value.correct.split(''),
+            correct: this.value.correct.split(""),
             user: [],
             totalCorrect: 0,
             totalTest: this.value.correct.length
@@ -132,7 +132,9 @@ var dataModule = (function() {
     };
 
     //update method
-    word.prototype.update = function(value) {};
+    word.prototype.update = function(value) {
+        
+    };
 
     return {
         //indicators - test Control
@@ -158,11 +160,14 @@ var dataModule = (function() {
 
         reduceTime: function() {}, // reduces the time by one sec
 
-        timeLeft() {}, //checks if there is time left to continue the test
+        timeLeft: function() {}, //checks if there is time left to continue the test
 
-        testEnded() {}, //checks if the test has already ended
+        //checks if the test has already ended
+        testEnded: function() {
+            return appData.indicators.testEnded;
+        },
 
-        testStarted() {}, //checks if the test has started
+        testStarted: function() {}, //checks if the test has started
 
         //results
 
@@ -194,7 +199,7 @@ var dataModule = (function() {
 
         // increments the currentWordIndex - updates the current word (appData.words.currentWord) by creating a new instance of the word class - updates numOfCorrectWords, numOfCorrectCharacters and numOfTestCharacters
         moveToNewWord: function() {
-            if(appData.words.currentWordIndex > -1){
+            if (appData.words.currentWordIndex > -1) {
                 //update nr of corect words
                 //update nr of corect characters
                 //update nr of corect test characters
@@ -205,22 +210,25 @@ var dataModule = (function() {
             appData.words.currentWord = newWord;
         },
         //updade current wordindex
-        getCurrentWordIndex(){
+        getCurrentWordIndex() {
             return appData.words.currentWordIndex;
         },
 
         //get current word
-        getCurrentWord(){
+        getCurrentWord() {
             var currentWord = appData.words.currentWord;
             return {
                 value: {
                     correct: currentWord.value.correct,
                     user: currentWord.value.user
                 }
-            }
+            };
         },
 
-        updateCurrentWord: function(value) {}, // updates current word using user input
+        // updates current word using user input
+        updateCurrentWord: function(value) {
+            appData.words.currentWord.update(value);
+        },
 
         getLineReturn() {
             return lineReturn;
