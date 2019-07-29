@@ -25,8 +25,10 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
             uModule.updateTimeLeft(timeLeft);
 
             //move to a new word
+            dModule.moveToNewWord();
 
             //set active word
+            
 
             //format active word
 

@@ -102,7 +102,7 @@ var dataModule = (function() {
             numOfTestCharacters: 0
         },
         words: {
-            currentWordIndex: 0,
+            currentWordIndex: -1,
             testWords: [],
             currentWord: {}
         }
@@ -114,7 +114,22 @@ var dataModule = (function() {
     //      characters: {correct: [], user: [], totalCorrect: 0, totalTest: 0 }
     //    }
 
-    var word = function(index) {};
+    var word = function(index) {
+        //word values correct vs user
+        this.value = {
+            correct: appData.words.testWords[index] + " ",
+            user: "",
+            isCorrect: false
+        };
+
+        //characters values correct vs user
+        this.characters = {
+            correct: this.value.correct.split(''),
+            user: [],
+            totalCorrect: 0,
+            totalTest: this.value.correct.length
+        };
+    };
 
     //update method
     word.prototype.update = function(value) {};
@@ -177,7 +192,18 @@ var dataModule = (function() {
             return appData.words.testWords;
         },
 
-        moveToNewWord: function() {}, // increments the currentWordIndex - updates the current word (appData.words.currentWord) by creating a new instance of the word class - updates numOfCorrectWords, numOfCorrectCharacters and numOfTestCharacters
+        // increments the currentWordIndex - updates the current word (appData.words.currentWord) by creating a new instance of the word class - updates numOfCorrectWords, numOfCorrectCharacters and numOfTestCharacters
+        moveToNewWord: function() {
+            if(appData.words.currentWordIndex > -1){
+                //update nr of corect words
+                //update nr of corect characters
+                //update nr of corect test characters
+            }
+            appData.words.currentWordIndex++;
+            var currentIndex = appData.words.currentWordIndex;
+            var newWord = new word(currentIndex);
+            appData.words.currentWord = newWord;
+        },
 
         updateCurrentWord: function(value) {}, // updates current word using user input
 
