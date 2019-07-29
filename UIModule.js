@@ -66,7 +66,9 @@ var UIModule = (function() {
 
         //user input
 
-        inputFocus: function() {},
+        inputFocus: function() {
+            DOMElements.textInput.focus();
+        },
 
         isNameEmpty: function() {},
 
@@ -99,9 +101,17 @@ var UIModule = (function() {
             DOMElements.content.innerHTML = content;
         },
 
-        formatWord: function(wordObject, wordHTML) {},
+        formatWord: function(wordObject) {
+            var activeWord = DOMElements.activeWord;
+            //highlight word
+            activeWord.className = "activeWord";
 
-        setActiveWord: function(index) {},
+            //format individual character
+        },
+
+        setActiveWord: function(index) {
+            DOMElements.activeWord = DOMElements.content.children[index];
+        },
 
         deactivateCurrentWord: function() {},
 

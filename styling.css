@@ -93,6 +93,11 @@ header h1 {
     overflow: hidden;
 }
 
+.activeWord {
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 5px;
+}
+
 /* input */
 #input {
     width: 100%;

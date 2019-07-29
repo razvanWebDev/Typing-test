@@ -12,27 +12,31 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
             var lineReturn = dModule.getLineReturn();
             var words = wModule.getWords(textNumber);
             dModule.fillListOfTestWords(textNumber, words);
-            var testWords = dModule.getListofTestWords() ;
+            var testWords = dModule.getListofTestWords();
             uModule.fillContent(testWords, lineReturn);
 
             //set the total test time
-            dModule.setTestTime(duration)
+            dModule.setTestTime(duration);
 
             //update the time left
             dModule.initializeTimeLeft();
 
-            var timeLeft = dModule.getTimeLeft()
+            var timeLeft = dModule.getTimeLeft();
             uModule.updateTimeLeft(timeLeft);
 
             //move to a new word
             dModule.moveToNewWord();
 
             //set active word
-            
+            var index = dModule.getCurrentWordIndex();
+            uModule.setActiveWord(index);
 
             //format active word
+            var currentWord = dModule.getCurrentWord();
+            uModule.formatWord(currentWord);
 
             //focus on the input
+            uModule.inputFocus();
 
             //add event listeners
 

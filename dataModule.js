@@ -204,6 +204,21 @@ var dataModule = (function() {
             var newWord = new word(currentIndex);
             appData.words.currentWord = newWord;
         },
+        //updade current wordindex
+        getCurrentWordIndex(){
+            return appData.words.currentWordIndex;
+        },
+
+        //get current word
+        getCurrentWord(){
+            var currentWord = appData.words.currentWord;
+            return {
+                value: {
+                    correct: currentWord.value.correct,
+                    user: currentWord.value.user
+                }
+            }
+        },
 
         updateCurrentWord: function(value) {}, // updates current word using user input
 
