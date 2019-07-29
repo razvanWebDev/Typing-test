@@ -14,9 +14,15 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
             dModule.fillListOfTestWords(textNumber, words);
             var testWords = dModule.getListofTestWords() ;
             uModule.fillContent(testWords, lineReturn);
+
             //set the total test time
+            dModule.setTestTime(duration)
 
             //update the time left
+            dModule.initializeTimeLeft();
+
+            var timeLeft = dModule.getTimeLeft()
+            uModule.updateTimeLeft(timeLeft);
 
             //move to a new word
 

@@ -2,22 +2,22 @@ var UIModule = (function() {
     //classes used to select HTML elements
     var DOMElements = {
         //indicators - test control
-        timeLeft:"", //HTML element displaying time left
+        timeLeft: document.getElementById("timeLeft"),
         //test results
-        wpm:"",
-        wpmChange:"",
-        cpm:"",
-        cpmChange:"",
-        accuracy:"",
-        accuracyChange:"",
+        wpm: document.getElementById("wpm"),
+        wpmChange: document.getElementById("wpmChange"),
+        cpm: document.getElementById("cpm"),
+        cpmChange: document.getElementById("cpmChange"),
+        accuracy: document.getElementById("accuracy"),
+        accuracyChange: document.getElementById("accuracyChange"),
         //user input
-        textInput:"",
-        nameInput:"",
+        textInput: document.getElementById("input"),
+        nameInput: document.getElementById("name"),
         //test words
-        content:document.getElementById('content'),
-        activeWord:"",
+        content: document.getElementById("content"),
+        activeWord: "",
         //modal
-        modal:""
+        modal: document.getElementById("myModal")
     };
 
     var splitArray = function(string) {
@@ -52,7 +52,9 @@ var UIModule = (function() {
 
         //Indicators - Test Control
 
-        updateTimeLeft: function() {},
+        updateTimeLeft: function(x) {
+            DOMElements.timeLeft.innerHTML = x;
+        },
 
         //results
 
@@ -89,11 +91,12 @@ var UIModule = (function() {
             content = content.join("");
 
             //replace the line return special code with the HTML entity
-           // content = content.replace('<span>|</span>', '<span>&crarr</span>')
-            content = content.split("<span> " + lineReturn + "</span>").join("<span>&#8629</span>");
+            // content = content.replace('<span>|</span>', '<span>&crarr</span>')
+            content = content
+                .split("<span> " + lineReturn + "</span>")
+                .join("<span>&#8629</span>");
             //fill content
             DOMElements.content.innerHTML = content;
-
         },
 
         formatWord: function(wordObject, wordHTML) {},

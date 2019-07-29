@@ -22,29 +22,66 @@ var dataModule = (function() {
         newString = firstCharCap + remainingChar;
         return newString;
     };
-    
 
     //capitalize random function
     var capitalizeRandom = function(arrayOfStrings) {
         return arrayOfStrings.map(function(currentWord) {
-            var x = Math.floor(Math.random()*4);
-            return (x == 3) ? currentWord.capitalize() : currentWord;
+            var x = Math.floor(Math.random() * 4);
+            return x == 3 ? currentWord.capitalize() : currentWord;
         });
     };
 
     //add random punctuation function
     var addRandomPunctuation = function(arrayOfStrings) {
-        return arrayOfStrings.map(function(currentWord){
+        return arrayOfStrings.map(function(currentWord) {
             var randomPunctuation;
-            var items = [lineReturn, "|","?","?","?","?","?", ",", ",", ",", ",", ",",",", ",", ".",".",".",".",".",".", "!","!","!","!","!", "", "", "", "","", "","","","","","", "", "","",""];
+            var items = [
+                lineReturn,
+                "|",
+                "?",
+                "?",
+                "?",
+                "?",
+                "?",
+                ",",
+                ",",
+                ",",
+                ",",
+                ",",
+                ",",
+                ",",
+                ".",
+                ".",
+                ".",
+                ".",
+                ".",
+                ".",
+                "!",
+                "!",
+                "!",
+                "!",
+                "!",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ];
             var randomIndex = Math.floor(Math.random() * items.length);
             randomPunctuation = items[randomIndex];
             return currentWord + randomPunctuation;
-        })
+        });
     };
-
-  
-
 
     var appData = {
         indicators: {
@@ -85,15 +122,24 @@ var dataModule = (function() {
     return {
         //indicators - test Control
 
-        setTestTime: function(x) {}, //sets the total test time to x
+        //sets the total test time to x
+        setTestTime: function(x) {
+            appData.indicators.totalTestTime = x;
+        },
 
-        initializeTimeLeft() {}, //initializes time left to the total test time
+        //initializes time left to the total test time
+        initializeTimeLeft() {
+            appData.indicators.timeLeft = appData.indicators.totalTestTime;
+        },
 
         startTest: function() {}, //starts the test
 
         endTest: function() {}, //ends the test
 
-        getTimeLeft: function() {}, //return the remaining test time
+        //return the remaining test time
+        getTimeLeft: function() {
+            return appData.indicators.timeLeft;
+        },
 
         reduceTime: function() {}, // reduces the time by one sec
 
@@ -125,9 +171,8 @@ var dataModule = (function() {
             }
             appData.words.testWords = result;
         },
-       
 
-         // get list of test words: words.testWords
+        // get list of test words: words.testWords
         getListofTestWords() {
             return appData.words.testWords;
         },
@@ -135,15 +180,13 @@ var dataModule = (function() {
         moveToNewWord: function() {}, // increments the currentWordIndex - updates the current word (appData.words.currentWord) by creating a new instance of the word class - updates numOfCorrectWords, numOfCorrectCharacters and numOfTestCharacters
 
         updateCurrentWord: function(value) {}, // updates current word using user input
-    
-        getLineReturn(){
+
+        getLineReturn() {
             return lineReturn;
         },
 
-        returnData(){
+        returnData() {
             console.log(appData);
         }
-  
     };
- 
 })();
