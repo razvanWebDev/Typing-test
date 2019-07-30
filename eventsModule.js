@@ -1,7 +1,7 @@
 var eventsModule = (function(dModule, uModule, cModule, wModule) {
     var addEventListeners = function() {
         //character typing event listener
-        uModule.getDOMElements().textInput.addEventListener("keypress", function(event){
+        uModule.getDOMElements().textInput.addEventListener("keyup", function(event){
             //check if test ended, do nothing
             if(dModule.testEnded()){
                 return;

@@ -83,6 +83,12 @@ var dataModule = (function() {
         });
     };
 
+    //character callback used to calculate nr of correct character inside the current word
+    var nrOfCorrectChars;
+    var charCallBack = function(currentElement, index) {
+        nrOfCorrectChars += currentElement == this.characters.user[index] ? 1 : 0;
+    };
+
     var appData = {
         indicators: {
             testStarted: false,
@@ -118,7 +124,7 @@ var dataModule = (function() {
         //word values correct vs user
         this.value = {
             correct: appData.words.testWords[index] + " ",
-            user: "",
+            user: "0",
             isCorrect: false
         };
 
@@ -133,7 +139,17 @@ var dataModule = (function() {
 
     //update method
     word.prototype.update = function(value) {
+        console.log(value);
+        this.value.user = value;
         
+        this.value.isCorrect = (this.value.correct == this.value.user);
+        this.characters.user = this.value.user.split("");
+
+        nrOfCorrectChars = 0;
+        charCallBack = charCallBack.bind(this);
+        this.characters.correct.forEach(charCallBack);
+
+        this.characters.totalCorrect = nrOfCorrectChars;
     };
 
     return {

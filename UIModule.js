@@ -48,7 +48,7 @@ var UIModule = (function() {
     return {
         //get DOM elements
 
-        getDOMElements() {
+        getDOMElements: function() {
             return {
                 textInput: DOMElements.textInput
             }
@@ -85,7 +85,7 @@ var UIModule = (function() {
         emptyInput: function() {},
 
         getTypedWord: function() {
-            return DOMElements.textInput.nodeValue;
+            return DOMElements.textInput.value;
         },
 
         //test words
