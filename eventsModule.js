@@ -1,7 +1,7 @@
 var eventsModule = (function(dModule, uModule, cModule, wModule) {
     var addEventListeners = function() {
         //character typing event listener
-        uModule.getDOMElements().textInput.addEventListener("keyup", function(event){
+        uModule.getDOMElements().textInput.addEventListener("input", function(event){
             //check if test ended, do nothing
             if(dModule.testEnded()){
                 return;
@@ -19,6 +19,8 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
             dModule.updateCurrentWord(typedWord);
 
             //format active word
+            var currentWord = dModule.getCurrentWord();
+            uModule.formatWord(currentWord);
 
             //check if the user pressed space or enter
             if(uModule.spacePressed() || uModule.enterPressed()){

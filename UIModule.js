@@ -45,13 +45,22 @@ var UIModule = (function() {
         return array.join("");
     };
 
+    var userValue;
+    var returnCharClass = function(currentChar, index) {
+        return index < userValue.length
+            ? currentChar == userValue[index]
+                ? "correctCharacter"
+                : "wrongCharacater"
+            : "0";
+    };
+
     return {
         //get DOM elements
 
         getDOMElements: function() {
             return {
                 textInput: DOMElements.textInput
-            }
+            };
         },
 
         //Indicators - Test Control
@@ -113,6 +122,22 @@ var UIModule = (function() {
             activeWord.className = "activeWord";
 
             //format individual character
+            var correctValue = wordObject.value.correct;
+            userValue = wordObject.value.user;
+
+            var classes = Array.prototype.map.call(
+                correctValue,
+                returnCharClass
+            );
+
+            var activeWord = DOMElements.activeWord;
+            var characters = activeWord.children;
+
+            //add classes to children
+            for (var i = 0; i < characters.length; i ++) {
+                characters[i].removeAttribute("class");
+                characters[i].className = classes[i];
+            }
         },
 
         setActiveWord: function(index) {
