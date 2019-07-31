@@ -124,7 +124,7 @@ var dataModule = (function() {
         //word values correct vs user
         this.value = {
             correct: appData.words.testWords[index] + " ",
-            user: "0",
+            user: "",
             isCorrect: false
         };
 
