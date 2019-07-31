@@ -91,7 +91,9 @@ var UIModule = (function() {
             return event.data == " ";
         },
 
-        enterPressed: function() {},
+        enterPressed: function(lineReturn) {
+            return this.getTypedWord().includes(lineReturn + " ");
+        },
 
         emptyInput: function() {
             DOMElements.textInput.value = "";
@@ -112,10 +114,7 @@ var UIModule = (function() {
             content = content.join("");
 
             //replace the line return special code with the HTML entity
-            // content = content.replace('<span>|</span>', '<span>&crarr</span>')
-            content = content
-                .split("<span> " + lineReturn + "</span>")
-                .join("<span>&#8629</span>");
+            content = content.split("<span> " + lineReturn + "</span>").join("<span>000</span>");
             //fill content
             DOMElements.content.innerHTML = content;
         },

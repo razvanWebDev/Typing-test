@@ -1,2 +1,2 @@
-eventsModule.init(30, 1);
+eventsModule.init(30, 0);
 dataModule.returnData();

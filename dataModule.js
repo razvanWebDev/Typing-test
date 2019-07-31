@@ -37,7 +37,7 @@ var dataModule = (function() {
             var randomPunctuation;
             var items = [
                 lineReturn,
-                "|",
+                lineReturn,
                 "?",
                 "?",
                 "?",
@@ -86,7 +86,8 @@ var dataModule = (function() {
     //character callback used to calculate nr of correct character inside the current word
     var nrOfCorrectChars;
     var charCallBack = function(currentElement, index) {
-        nrOfCorrectChars += currentElement == this.characters.user[index] ? 1 : 0;
+        nrOfCorrectChars +=
+            currentElement == this.characters.user[index] ? 1 : 0;
     };
 
     var appData = {
@@ -139,10 +140,9 @@ var dataModule = (function() {
 
     //update method
     word.prototype.update = function(value) {
-        console.log(value);
         this.value.user = value;
-        
-        this.value.isCorrect = (this.value.correct == this.value.user);
+
+        this.value.isCorrect = this.value.correct == this.value.user;
         this.characters.user = this.value.user.split("");
 
         nrOfCorrectChars = 0;
