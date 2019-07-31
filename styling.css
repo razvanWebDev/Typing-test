@@ -84,26 +84,14 @@ header h1 {
 /* text content */
 #content {
     text-align: center;
-    height: 101px;
+    height: 100px;
+    line-height: 34px;
     width: 100%;
     background-color: rgba(128, 128, 128, 0.3);
     border-radius: 5px;
     font-size: 25px;
-    padding: 10px;
+    padding: 0px 10px;
     overflow: hidden;
-}
-
-/* input */
-#input {
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: center;
-    background-color: rgba(128, 128, 128, 0.1);
-    font-size: 30px;
-    padding: 10px;
-    margin: 10px auto;
-    color: white;
 }
 .activeWord {
     background-color: rgba(128, 128, 128, 0.8);
@@ -117,6 +105,20 @@ header h1 {
 .wrongCharacater {
     color: mediumvioletred;
 }
+
+/* input */
+#input {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.1);
+    font-size: 25px;
+    padding: 10px;
+    margin: 10px auto;
+    color: white;
+}
+
 
 #keyboard {
     max-height: 25vh;

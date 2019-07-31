@@ -154,6 +154,12 @@ var UIModule = (function() {
 
 
 
-        scroll: function() {}
+        scroll: function() {
+            var activeWord = DOMElements.activeWord;
+            var top1 = activeWord.offsetTop;
+            var top2 = DOMElements.content.offsetTop;
+            var diff = top1 - top2;
+            DOMElements.content.scrollTop = diff - 36;
+        }
     };
 })();

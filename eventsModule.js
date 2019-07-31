@@ -44,6 +44,7 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                     uModule.formatWord(currentWord);
 
                     //scroll new word into view
+                    uModule.scroll();
                 }
             });
         //click on download button event listener
