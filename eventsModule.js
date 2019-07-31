@@ -48,8 +48,10 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                 }
             });
         //click on download button event listener
-        //click on restart button event listener
     };
+
+    //scroll active word into middleview on window resize
+    window.addEventListener("resize", uModule.scroll);
 
     return {
         //init function, initializes the test before start
