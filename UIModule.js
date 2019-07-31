@@ -114,7 +114,7 @@ var UIModule = (function() {
             content = content.join("");
 
             //replace the line return special code with the HTML entity
-            content = content.split("<span> " + lineReturn + "</span>").join("<span>000</span>");
+            content = content.split("<span>" + lineReturn + "</span>").join("<span>&#8629</span>");
             //fill content
             DOMElements.content.innerHTML = content;
         },
