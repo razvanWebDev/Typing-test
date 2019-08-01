@@ -165,7 +165,10 @@ var dataModule = (function() {
             appData.indicators.timeLeft = appData.indicators.totalTestTime;
         },
 
-        startTest: function() {}, //starts the test
+        //starts the test
+        startTest: function() {
+            appData.indicators.testStarted = true;
+        }, 
 
         endTest: function() {}, //ends the test
 

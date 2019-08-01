@@ -30,6 +30,18 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                 //if test has not started yet, start test,countdown
                 if (!dModule.testStarted()) {
                     //start the test
+                    dModule.startTest();
+                    //start counter
+                    var b = setInterval(function(){
+                        //calculate results in data module
+
+                        //update result in ui module
+
+                        //fill modal
+
+                        //display modal
+
+                    }, 1000);
                 }
 
                 //get typed word
