@@ -54,6 +54,34 @@ var UIModule = (function() {
             : "0";
     };
 
+    var updateChange = function(value, changeElement) {
+        //determine the class to add to the changeElement
+        var classToAdd, html;
+        [classToAdd, html] =
+            value >= 0 ? ["scoreUp", "+" + value] : ["scoreDown", value];
+
+        //add % to percentege change
+        if (changeElement == DOMElements.accuracyChange) {
+            html += "%";
+        }
+
+        //update change element
+        changeElement.innerHTML = html;
+        //style change element
+        changeElement.removeAttribute("class");
+        changeElement.className = classToAdd;
+
+        //fade element
+        fadeElement(changeElement);
+    };
+
+    var fadeElement = function(element) {
+        element.style.opacity = 1;
+        setTimeout(function(){
+            element.style.opacity = 0.95;
+        }, 100)
+    };
+
     return {
         //get DOM elements
 
@@ -77,7 +105,12 @@ var UIModule = (function() {
             //update cpm
             DOMElements.cpm.innerHTML = results.cpm;
             //update accuracy
-            DOMElements.accuracy.innerHTML = results.accuracy;
+            DOMElements.accuracy.innerHTML = results.accuracy + "%";
+
+            //update changes
+            updateChange(results.wpmChange, DOMElements.wpmChange);
+            updateChange(results.cpmChange, DOMElements.cpmChange);
+            updateChange(results.accuracyChange, DOMElements.accuracyChange);
         },
 
         fillModal: function() {},
@@ -121,7 +154,9 @@ var UIModule = (function() {
             content = content.join("");
 
             //replace the line return special code with the HTML entity
-            content = content.split("<span>" + lineReturn + "</span>").join("<span>&#8629</span>");
+            content = content
+                .split("<span>" + lineReturn + "</span>")
+                .join("<span>&#8629</span>");
             //fill content
             DOMElements.content.innerHTML = content;
         },
@@ -144,7 +179,7 @@ var UIModule = (function() {
             var characters = activeWord.children;
 
             //add classes to children
-            for (var i = 0; i < characters.length; i ++) {
+            for (var i = 0; i < characters.length; i++) {
                 characters[i].removeAttribute("class");
                 characters[i].className = classes[i];
             }
@@ -157,8 +192,6 @@ var UIModule = (function() {
         deactivateCurrentWord: function() {
             DOMElements.activeWord.removeAttribute("class");
         },
-
-
 
         scroll: function() {
             var activeWord = DOMElements.activeWord;

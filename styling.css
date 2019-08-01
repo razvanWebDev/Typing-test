@@ -75,7 +75,6 @@ header h1 {
 .change {
     height: 25px;
     width: 25px;
-    background-color: rgba(128, 128, 128, 0.3);
     font-size: 16px;
     margin: 3px auto;
     border-radius: 3px;
