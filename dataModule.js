@@ -146,8 +146,8 @@ var dataModule = (function() {
         this.characters.user = this.value.user.split("");
 
         nrOfCorrectChars = 0;
-        charCallBack = charCallBack.bind(this);
-        this.characters.correct.forEach(charCallBack);
+        var charCallBack2 = charCallBack.bind(this);
+        this.characters.correct.forEach(charCallBack2);
 
         this.characters.totalCorrect = nrOfCorrectChars;
     };
@@ -179,11 +179,11 @@ var dataModule = (function() {
 
         // reduces the time by one sec
         reduceTime: function() {
-            appData.indicators.timeLeft --;
+            appData.indicators.timeLeft--;
             return appData.indicators.timeLeft;
-        }, 
+        },
 
-         //checks if there is time left to continue the test
+        //checks if there is time left to continue the test
         timeLeft: function() {
             return appData.indicators.timeLeft != 0;
         },
@@ -196,7 +196,7 @@ var dataModule = (function() {
         //checks if the test has started
         testStarted: function() {
             return appData.indicators.testStarted;
-        }, 
+        },
 
         //results
 
@@ -211,7 +211,7 @@ var dataModule = (function() {
                     (60 * numOfCorrectWords) /
                         (appData.indicators.totalTestTime -
                             appData.indicators.timeLeft)
-                )
+                );
             } else {
                 appData.results.wpm = 0;
             }
@@ -230,15 +230,36 @@ var dataModule = (function() {
                     (60 * numOfCorrectCharacters) /
                         (appData.indicators.totalTestTime -
                             appData.indicators.timeLeft)
-                )
+                );
             } else {
                 appData.results.cpm = 0;
             }
             appData.results.cpmChange = appData.results.cpm - cpmOld;
             return [appData.results.cpm, appData.results.cpmChange];
-        }, 
+        },
 
-        calculateAccuracy: function() {}, //calculates accuracy and accuracyChange and updates them in appData
+        //calculates accuracy and accuracyChange and updates them in appData
+        calculateAccuracy: function() {
+            var accuracyOld = appData.results.accuracy;
+            var numOfCorrectCharacters = appData.results.numOfCorrectCharacters;
+            var numOfTestCharacters = appData.results.numOfTestCharacters;
+            if (
+                appData.indicators.timeLeft != appData.indicators.totalTestTime
+            ) {
+                if (numOfTestCharacters != 0) {
+                    appData.results.accuracy = Math.round(
+                        (100 * numOfCorrectCharacters) / numOfTestCharacters
+                    );
+                } else {
+                    appData.results.accuracy = 0;
+                }
+            } else {
+                appData.results.accuracy = 0;
+            }
+            appData.results.accuracyChange =
+                appData.results.accuracy - accuracyOld;
+            return [appData.results.accuracy, appData.results.accuracyChange];
+        },
 
         //test words
         // fills words.testWords
@@ -268,9 +289,11 @@ var dataModule = (function() {
                     appData.results.numOfCorrectWords++;
                 }
                 //update nr of corect characters
-                appData.results.numOfCorrectCharacters += appData.words.currentWord.characters.totalCorrect;
+                appData.results.numOfCorrectCharacters +=
+                    appData.words.currentWord.characters.totalCorrect;
                 //update nr of corect test characters
-                appData.results.numOfTestCharacters += appData.words.currentWord.characters.totalTest;
+                appData.results.numOfTestCharacters +=
+                    appData.words.currentWord.characters.totalTest;
             }
             appData.words.currentWordIndex++;
             var currentIndex = appData.words.currentWordIndex;
