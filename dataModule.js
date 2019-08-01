@@ -177,16 +177,26 @@ var dataModule = (function() {
             return appData.indicators.timeLeft;
         },
 
-        reduceTime: function() {}, // reduces the time by one sec
+        // reduces the time by one sec
+        reduceTime: function() {
+            appData.indicators.timeLeft --;
+            return appData.indicators.timeLeft;
+        }, 
 
-        timeLeft: function() {}, //checks if there is time left to continue the test
+         //checks if there is time left to continue the test
+        timeLeft: function() {
+            return appData.indicators.timeLeft != 0;
+        },
 
         //checks if the test has already ended
         testEnded: function() {
             return appData.indicators.testEnded;
         },
 
-        testStarted: function() {}, //checks if the test has started
+        //checks if the test has started
+        testStarted: function() {
+            return appData.indicators.testStarted;
+        }, 
 
         //results
 
@@ -197,12 +207,11 @@ var dataModule = (function() {
             if (
                 appData.indicators.timeLeft != appData.indicators.totalTestTime
             ) {
-                Math.round(
-                    (appData.results.wpm =
-                        (60 * numOfCorrectWords) /
+                appData.results.wpm = Math.round(
+                    (60 * numOfCorrectWords) /
                         (appData.indicators.totalTestTime -
-                            appData.indicators.timeLeft))
-                );
+                            appData.indicators.timeLeft)
+                )
             } else {
                 appData.results.wpm = 0;
             }
@@ -242,7 +251,7 @@ var dataModule = (function() {
                     appData.results.numOfCorrectWords++;
                 }
                 //update nr of corect characters
-                appData.results.numOfTestCharacters += appData.words.currentWord.characters.totalCorrect;
+                appData.results.numOfCorrectCharacters += appData.words.currentWord.characters.totalCorrect;
                 //update nr of corect test characters
                 appData.results.numOfTestCharacters += appData.words.currentWord.characters.totalTest;
             }

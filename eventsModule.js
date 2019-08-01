@@ -36,12 +36,17 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                     var b = setInterval(function(){
                         var results = {};
                         [results.wpm, results.wpmChange] = dModule.calculateWpm();
-                        console.log(dModule.returnData);
+                        dModule.returnData();
                         //update result in ui module
 
                         //fill modal
 
                         //display modal
+
+                       if(dModule.timeLeft()){
+                           var timeLeft = dModule.reduceTime();
+                           uModule.updateTimeLeft(timeLeft);
+                       }
 
                     }, 1000);
                 }
