@@ -242,6 +242,7 @@ var dataModule = (function() {
                     appData.results.numOfCorrectWords++;
                 }
                 //update nr of corect characters
+                appData.results.numOfTestCharacters += appData.words.currentWord.characters.totalCorrect;
                 //update nr of corect test characters
             }
             appData.words.currentWordIndex++;
