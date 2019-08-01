@@ -1,27 +1,34 @@
 var eventsModule = (function(dModule, uModule, cModule, wModule) {
     var addEventListeners = function() {
         //enter click event
-        uModule.getDOMElements().textInput.addEventListener('keydown', function(event){
+        uModule
+            .getDOMElements()
+            .textInput.addEventListener("keydown", function(event) {
                 //check if test ended, do nothing
                 if (dModule.testEnded()) {
                     return;
-                };
+                }
 
                 //check if the user pressed enter
                 var key = event.keyCode;
-                if(key == 13){
-                    uModule.getDOMElements().textInput.value += dModule.getLineReturn() +  " ";
-                    
+                if (key == 13) {
+                    uModule.getDOMElements().textInput.value +=
+                        dModule.getLineReturn() + " ";
+
                     //create a new input event
-                    var inputEvent = new Event('input');
-                    uModule.getDOMElements().textInput.dispatchEvent(inputEvent);
+                    var inputEvent = new Event("input");
+                    uModule
+                        .getDOMElements()
+                        .textInput.dispatchEvent(inputEvent);
                 }
 
                 //createa new input event
-        });
+            });
 
         //character typing event listener
-        uModule.getDOMElements().textInput.addEventListener("input", function(event) {
+        uModule
+            .getDOMElements()
+            .textInput.addEventListener("input", function(event) {
                 //check if test ended, do nothing
                 if (dModule.testEnded()) {
                     return;
@@ -32,22 +39,33 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                     //start the test
                     dModule.startTest();
                     //start counter
-                     //calculate results in data module
-                    var b = setInterval(function(){
+                    //calculate results in data module
+                    var b = setInterval(function() {
                         var results = {};
-                        [results.wpm, results.wpmChange] = dModule.calculateWpm();
+                        [
+                            results.wpm,
+                            results.wpmChange
+                        ] = dModule.calculateWpm();
+
+                        [
+                            results.cpm,
+                            results.cpmChange
+                        ] = dModule.calculateCpm();
+
                         dModule.returnData();
                         //update result in ui module
+                        //update wpm
+                        if (dModule.timeLeft()) {
+                            var timeLeft = dModule.reduceTime();
+                            uModule.updateTimeLeft(timeLeft);
+                        };
+
+                        //update cpm
+                        
 
                         //fill modal
 
                         //display modal
-
-                       if(dModule.timeLeft()){
-                           var timeLeft = dModule.reduceTime();
-                           uModule.updateTimeLeft(timeLeft);
-                       }
-
                     }, 1000);
                 }
 
@@ -62,7 +80,10 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                 uModule.formatWord(currentWord);
 
                 //check if the user pressed space or enter
-                if (uModule.spacePressed(event) || uModule.enterPressed(dModule.getLineReturn())) {
+                if (
+                    uModule.spacePressed(event) ||
+                    uModule.enterPressed(dModule.getLineReturn())
+                ) {
                     //empty  text input
                     uModule.emptyInput();
 

@@ -219,7 +219,24 @@ var dataModule = (function() {
             return [appData.results.wpm, appData.results.wpmChange];
         },
 
-        calculateCpm: function() {}, //calculates cpm and cpmChange and updates them in appData
+        //calculates cpm and cpmChange and updates them in appData
+        calculateCpm: function() {
+            var cpmOld = appData.results.cpm;
+            var numOfCorrectCharacters = appData.results.numOfCorrectCharacters;
+            if (
+                appData.indicators.timeLeft != appData.indicators.totalTestTime
+            ) {
+                appData.results.cpm = Math.round(
+                    (60 * numOfCorrectCharacters) /
+                        (appData.indicators.totalTestTime -
+                            appData.indicators.timeLeft)
+                )
+            } else {
+                appData.results.cpm = 0;
+            }
+            appData.results.cpmChange = appData.results.cpm - cpmOld;
+            return [appData.results.cpm, appData.results.cpmChange];
+        }, 
 
         calculateAccuracy: function() {}, //calculates accuracy and accuracyChange and updates them in appData
 
