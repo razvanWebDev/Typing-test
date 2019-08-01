@@ -32,9 +32,11 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                     //start the test
                     dModule.startTest();
                     //start counter
+                     //calculate results in data module
                     var b = setInterval(function(){
-                        //calculate results in data module
-
+                        var results = {};
+                        [results.wpm, results.wpmChange] = dModule.calculateWpm();
+                        console.log(dModule.returnData);
                         //update result in ui module
 
                         //fill modal
