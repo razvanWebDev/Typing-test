@@ -71,7 +71,14 @@ var UIModule = (function() {
 
         //results
 
-        updateResults: function() {},
+        updateResults: function(results) {
+            //update wpm
+            DOMElements.wpm.innerHTML = results.wpm;
+            //update cpm
+            DOMElements.cpm.innerHTML = results.cpm;
+            //update accuracy
+            DOMElements.accuracy.innerHTML = results.accuracy;
+        },
 
         fillModal: function() {},
 

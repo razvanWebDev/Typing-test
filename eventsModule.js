@@ -57,8 +57,9 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                             results.accuracyChange
                         ] = dModule.calculateAccuracy();
 
-                        dModule.returnData();
-                        //update result in ui module
+                        //update results in ui module
+                        uModule.updateResults(results);
+
                         //update wpm
                         if (dModule.timeLeft()) {
                             var timeLeft = dModule.reduceTime();
