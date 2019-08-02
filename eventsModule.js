@@ -60,18 +60,17 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                         //update results in ui module
                         uModule.updateResults(results);
 
-                        //update wpm
+                        //update timeleft
                         if (dModule.timeLeft()) {
                             var timeLeft = dModule.reduceTime();
                             uModule.updateTimeLeft(timeLeft);
-                        };
-
-                        //update cpm
-                        
-
-                        //fill modal
-
-                        //display modal
+                        } else {
+                            //end test
+                            clearInterval(b);
+                            dModule.endTest();
+                            //fill modal
+                            //display modal
+                        }
                     }, 1000);
                 }
 

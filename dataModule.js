@@ -170,7 +170,10 @@ var dataModule = (function() {
             appData.indicators.testStarted = true;
         },
 
-        endTest: function() {}, //ends the test
+        //ends the test
+        endTest: function() {
+            appData.indicators.testEnded = true;
+        }, 
 
         //return the remaining test time
         getTimeLeft: function() {
