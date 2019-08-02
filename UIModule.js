@@ -77,9 +77,9 @@ var UIModule = (function() {
 
     var fadeElement = function(element) {
         element.style.opacity = 1;
-        setTimeout(function(){
+        setTimeout(function() {
             element.style.opacity = 0.95;
-        }, 100)
+        }, 100);
     };
 
     return {
@@ -115,7 +115,9 @@ var UIModule = (function() {
 
         fillModal: function() {},
 
-        showModal: function() {},
+        showModal: function() {
+            DOMElements.modal.style.display = "block";
+        },
 
         //user input
 

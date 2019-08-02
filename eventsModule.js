@@ -68,8 +68,13 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                             //end test
                             clearInterval(b);
                             dModule.endTest();
+                            dModule.returnData();
+
                             //fill modal
+                           
                             //display modal
+                            uModule.showModal();
+                            
                         }
                     }, 1000);
                 }
