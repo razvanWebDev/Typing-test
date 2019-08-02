@@ -113,7 +113,37 @@ var UIModule = (function() {
             updateChange(results.accuracyChange, DOMElements.accuracyChange);
         },
 
-        fillModal: function() {},
+        fillModal: function(wpm) {
+            var results;
+            if (wpm < 40) {
+                results = {
+                    type: "turtle",
+                    image: "turtle.jpg",
+                    level: "beginer"
+                };
+            } else if (wpm < 70) {
+                results = {
+                    type: "horse",
+                    image: "horse.jpg",
+                    level: "Average"
+                };
+            } else {
+                results = {
+                    type: "puma",
+                    image: "puma.jpg",
+                    level: "Expert"
+                };
+            }
+
+            var html = `<div><p>You are a ${
+                results.type
+            } !</p><p>You type at a speed of ${wpm} words per minute!</p><img width=300 height=200 src='img/${
+                results.image
+            }' alt='${results.type}'></div>`;
+
+            //insert html before name input
+            DOMElements.nameInput.insertAdjacentHTML("beforebegin", html);
+        },
 
         showModal: function() {
             DOMElements.modal.style.display = "block";

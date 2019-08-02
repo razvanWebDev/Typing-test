@@ -163,8 +163,7 @@ header h1 {
 }
 
 .modal-content {
-    width: 60%;
-    height: 60vh;
+  
     position: relative;
     top: 50%;
     transform: translateY(-50%);

@@ -71,7 +71,7 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                             dModule.returnData();
 
                             //fill modal
-                           
+                            uModule.fillModal(results.wpm);
                             //display modal
                             uModule.showModal();
                             
