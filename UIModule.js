@@ -17,7 +17,8 @@ var UIModule = (function() {
         content: document.getElementById("content"),
         activeWord: "",
         //modal
-        modal: document.getElementById("myModal")
+        modal: document.getElementById("myModal"),
+        download: document.getElementById("download")
     };
 
     var splitArray = function(string) {
@@ -135,14 +136,17 @@ var UIModule = (function() {
                 };
             }
 
-            var html = `<div><p>You are a ${
+            var html = `<p>You are a ${
                 results.type
-            } !</p><p>You type at a speed of ${wpm} words per minute!</p><img width=300 height=200 src='img/${
+            } !</p><p>You type at a speed of ${wpm} words per minute!</p><img class="modalImage" src='img/${
                 results.image
-            }' alt='${results.type}'></div>`;
+            }' alt='${results.type}'></<p>`;
 
             //insert html before name input
             DOMElements.nameInput.insertAdjacentHTML("beforebegin", html);
+
+            //store level inside the download button
+            DOMElements.download.setAttribute("level", results.level);
         },
 
         showModal: function() {
