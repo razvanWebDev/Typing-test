@@ -18,7 +18,8 @@ var UIModule = (function() {
         activeWord: "",
         //modal
         modal: document.getElementById("myModal"),
-        download: document.getElementById("download")
+        download: document.getElementById("download"),
+        nameField: document.getElementById("name")
     };
 
     var splitArray = function(string) {
@@ -88,7 +89,8 @@ var UIModule = (function() {
 
         getDOMElements: function() {
             return {
-                textInput: DOMElements.textInput
+                textInput: DOMElements.textInput,
+                download: DOMElements.download
             };
         },
 
@@ -159,9 +161,13 @@ var UIModule = (function() {
             DOMElements.textInput.focus();
         },
 
-        isNameEmpty: function() {},
+        isNameEmpty: function() {
+            return DOMElements.nameField.value == "";
+        },
 
-        flagNameInput: function() {},
+        flagNameInput: function() {
+            DOMElements.nameField.style.borderColor = "red";
+        },
 
         spacePressed: function(event) {
             return event.data == " ";
