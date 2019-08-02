@@ -22,9 +22,13 @@ var certificateModule = (function() {
                 "center"
             );
             //add name
+            var button = event.target;
+            
+            var nameField = button.parentElement.previousElementSibling;
+            var name = nameField.value;
             doc.setTextColor(29, 210, 242);
             doc.setFontSize(19);
-            doc.text(105, 90, "NAme", "center");
+            doc.text(105, 90, name, "center");
             //add text
             doc.setTextColor(96, 96, 96);
             doc.setFontSize(14);
@@ -36,11 +40,14 @@ var certificateModule = (function() {
             );
             doc.text(105, 107, "and verified by Development Island", "center");
             //add results
-            doc.text(105, 117, "Level: Expert", "center");
-            doc.text(105, 124, "Average Speed: Expert", "center");
-            doc.text(105, 131, "Accuracy: Expert", "center");
+            var level = event.target.getAttribute('level');
+            doc.text(105, 117, "Level: " + level , "center");
+            doc.text(105, 124, "Average Speed: " + data.wpm + " wpm", "center");
+            doc.text(105, 131, "Accuracy: " + data.accuracy+ " %", "center");
             //add date
-            doc.text(121, 148, "Awarded on: 10/31/2017");
+            var date = new Date();
+            date = date.toLocaleDateString('en-GB');
+            doc.text(121, 148, "Awarded on: " + date);
 
             //save document
             doc.save("cerificate.pdf");
