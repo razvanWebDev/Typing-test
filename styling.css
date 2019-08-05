@@ -24,19 +24,10 @@ body {
     background: rgba(68, 232, 175, 0.6);
 }
 
-.scoreDown,
-.scoreUp {
-    border-radius: 5px;
-    padding: 5px;
+button:hover {
+    cursor: pointer;
 }
 
-.scoreDown {
-    background-color: #C71F16;
-}
-
-.scoreUp {
-    background-color: #30E849;
-}
 
 /* header */
 header h1 {
@@ -78,6 +69,20 @@ header h1 {
     font-size: 16px;
     margin: 3px auto;
     border-radius: 3px;
+}
+
+.scoreDown,
+.scoreUp {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.scoreDown {
+    background-color: #C71F16;
+}
+
+.scoreUp {
+    background-color: #30E849;
 }
 
 /* text content */
@@ -163,11 +168,18 @@ header h1 {
 }
 
 .close {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.topRight {
     position: absolute;
     top: 20px;
     right: 20px;
     font-size: 30px;
-    cursor: pointer;
+}
+
+.topRight:hover {
+    transform: scale(1.3);
 }
 
 .modal-content {
@@ -190,4 +202,16 @@ header h1 {
     width: 60%;
     border-radius: 50%;
     
+}
+
+#name {
+    width: 50%;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 17px;
+    background-color: rgba(129, 159, 151, 0.9);
+    color: whitesmoke;
+
 }

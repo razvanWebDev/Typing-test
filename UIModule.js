@@ -166,7 +166,7 @@ var UIModule = (function() {
         },
 
         flagNameInput: function() {
-            DOMElements.nameField.style.borderColor = "red";
+            DOMElements.nameField.style.border = "1px solid red";
         },
 
         spacePressed: function(event) {
