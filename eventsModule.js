@@ -68,7 +68,6 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                             //end test
                             clearInterval(b);
                             dModule.endTest();
-                            dModule.returnData();
 
                             //fill modal
                             uModule.fillModal(results.wpm);
@@ -118,7 +117,8 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
         //close modal
             uModule.getDOMElements().close.forEach(function(element){
                 element.addEventListener('click', function(){
-                    uModule.getDOMElements().modal.style.display = "none";
+                    var modal =  uModule.getDOMElements().modal;
+                    dModule.closeModal(modal);
                 })
             })
 

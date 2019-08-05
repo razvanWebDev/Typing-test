@@ -335,8 +335,8 @@ var dataModule = (function() {
             }
         },
 
-        returnData() {
-            console.log(appData);
+        closeModal(modal) {
+           modal.style.display = "none";
         }
     };
 })();
