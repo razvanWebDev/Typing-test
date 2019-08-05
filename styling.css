@@ -31,11 +31,11 @@ body {
 }
 
 .scoreDown {
-    background-color: mediumvioletred;
+    background-color: #C71F16;
 }
 
 .scoreUp {
-    background-color: greenyellow;
+    background-color: #30E849;
 }
 
 /* header */
