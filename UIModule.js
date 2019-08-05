@@ -18,6 +18,7 @@ var UIModule = (function() {
         activeWord: "",
         //modal
         modal: document.getElementById("myModal"),
+        close: document.querySelectorAll(".close"),
         download: document.getElementById("download"),
         nameField: document.getElementById("name")
     };
@@ -90,7 +91,9 @@ var UIModule = (function() {
         getDOMElements: function() {
             return {
                 textInput: DOMElements.textInput,
-                download: DOMElements.download
+                download: DOMElements.download,
+                modal: DOMElements.modal,
+                close: DOMElements.close
             };
         },
 

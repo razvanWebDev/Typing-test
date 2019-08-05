@@ -114,6 +114,14 @@ var eventsModule = (function(dModule, uModule, cModule, wModule) {
                     uModule.scroll();
                 }
             });
+
+        //close modal
+            uModule.getDOMElements().close.forEach(function(element){
+                element.addEventListener('click', function(){
+                    uModule.getDOMElements().modal.style.display = "none";
+                })
+            })
+
         //click on download button event listener
         uModule
             .getDOMElements()
