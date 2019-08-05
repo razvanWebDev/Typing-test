@@ -174,11 +174,13 @@ header h1 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: rgb(68, 232, 175);
     color: black;
     border-radius: 5px;
 }
 
 .modalImage {
     width: 60%;
+    border-radius: 50%;
+    
 }
