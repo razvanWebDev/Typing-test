@@ -24,8 +24,14 @@ body {
     background: rgba(68, 232, 175, 0.6);
 }
 
-button:hover {
+button {
+    border: none;
+    border-radius: 5px;
+    outline: none;
     cursor: pointer;
+    font-size: 17px;
+    padding: 5px 30px;
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -161,6 +167,7 @@ header h1 {
 
 #myModal h3 {
     font-size: 25px;
+    margin-bottom: 20px;
 }
 
 #myModal p {
@@ -187,20 +194,21 @@ header h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    min-height: 80vh;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: rgb(68, 232, 175);
     color: #3E3C48;
     border-radius: 5px;
+    padding: 20px;
 }
 
 .modalImage {
-    width: 60%;
+    width: 70%;
     border-radius: 50%;
+    margin: 20px auto;
     
 }
 
@@ -211,7 +219,21 @@ header h1 {
     border-radius: 5px;
     padding: 7px;
     font-size: 17px;
-    background-color: rgba(129, 159, 151, 0.9);
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: #3E3C48;
+    margin-bottom: 20px;
+}
 
+.modalBtns {
+    align-self: flex-end;
+}
+
+#myModal button {
+    background-color:  #177495;
+    color: whitesmoke;
+   
+}
+
+#myModal button:hover {
+    background-color:  rgba(23, 116, 149, 0.8);
 }
