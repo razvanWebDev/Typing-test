@@ -125,7 +125,7 @@ var UIModule = (function() {
                 results = {
                     type: "turtle",
                     image: "turtle.jpg",
-                    level: "beginer"
+                    level: "Beginner"
                 };
             } else if (wpm < 70) {
                 results = {
