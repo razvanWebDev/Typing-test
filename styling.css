@@ -248,5 +248,57 @@ header h1 {
 }
 
 @media only screen and (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+    /* header */
+    header h1 {
+        font-size: 1.5rem;
+    }
     
+    /* typing boxes */
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .meas-box {
+        width: 23%;
+    }
+    
+    .typingIcon img {
+        width: 40px;
+    }
+    
+    .value {
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 15px;
+    }
+    
+    .change {
+        font-size: 13px;
+    }
+    
+    /* text content */
+    #content {
+        height: 92px;
+        line-height: 30px;
+        font-size: 18px;
+    }
+
+    /* input */
+    #input {
+        font-size: 18px;
+        padding: 5px;
+    }
+    
+    /* reset button */
+    #restart {
+        font-size: 15px;
+    }
 }
