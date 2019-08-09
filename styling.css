@@ -8,7 +8,10 @@
 body {
     min-height: 100vh;
     padding: 0 50px;
-    background: linear-gradient(rgba(62, 60, 72, 0.7) 0%, rgba(62, 60, 72, 0.7) 100%),
+    background: linear-gradient(
+            rgba(62, 60, 72, 0.7) 0%,
+            rgba(62, 60, 72, 0.7) 100%
+        ),
         url(./img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,7 +36,6 @@ button {
     padding: 5px 30px;
     transition: all 0.2s ease-in-out;
 }
-
 
 /* header */
 header h1 {
@@ -84,11 +86,11 @@ header h1 {
 }
 
 .scoreDown {
-    background-color: #C71F16;
+    background-color: #c71f16;
 }
 
 .scoreUp {
-    background-color: #30E849;
+    background-color: #30e849;
 }
 
 /* text content */
@@ -109,11 +111,11 @@ header h1 {
 }
 
 .correctCharacter {
-    color: #30E849;
+    color: #30e849;
 }
 
 .wrongCharacater {
-    color: #C71F16;
+    color: #c71f16;
 }
 
 /* input */
@@ -129,7 +131,6 @@ header h1 {
     margin: 10px auto;
     border-radius: 5px;
 }
-
 
 #keyboard {
     max-height: 25vh;
@@ -173,6 +174,7 @@ header h1 {
 
 #myModal p {
     font-size: 20px;
+    text-align: center;
 }
 
 .close {
@@ -201,7 +203,7 @@ header h1 {
     justify-content: center;
     align-items: center;
     background-color: rgb(68, 232, 175);
-    color: #3E3C48;
+    color: #3e3c48;
     border-radius: 5px;
     padding: 20px;
 }
@@ -210,18 +212,17 @@ header h1 {
     width: 70%;
     border-radius: 50%;
     margin: 20px auto;
-    
 }
 
 #name {
     width: 50%;
-    border:none;
+    border: none;
     outline: none;
     border-radius: 5px;
     padding: 7px;
     font-size: 17px;
     background-color: whitesmoke;
-    color: #3E3C48;
+    color: #3e3c48;
     margin-bottom: 20px;
 }
 
@@ -230,13 +231,12 @@ header h1 {
 }
 
 #myModal button {
-    background-color:  #177495;
+    background-color: #177495;
     color: whitesmoke;
-   
 }
 
 #myModal button:hover {
-    background-color:  rgba(23, 116, 149, 0.8);
+    background-color: rgba(23, 116, 149, 0.8);
 }
 
 /* RESPONSIVE */
@@ -244,6 +244,10 @@ header h1 {
 @media only screen and (max-width: 1024px) {
     #keyboard {
         visibility: hidden;
+    }
+
+    .modal-content {
+        width: 80%;
     }
 }
 
@@ -255,7 +259,7 @@ header h1 {
     header h1 {
         font-size: 1.5rem;
     }
-    
+
     /* typing boxes */
     .row {
         width: 100%;
@@ -263,15 +267,15 @@ header h1 {
         justify-content: space-between;
         align-items: center;
     }
-    
+
     .meas-box {
         width: 23%;
     }
-    
+
     .typingIcon img {
         width: 40px;
     }
-    
+
     .value {
         font-size: 18px;
     }
@@ -279,11 +283,11 @@ header h1 {
     .title {
         font-size: 15px;
     }
-    
+
     .change {
         font-size: 13px;
     }
-    
+
     /* text content */
     #content {
         height: 92px;
@@ -296,9 +300,46 @@ header h1 {
         font-size: 18px;
         padding: 5px;
     }
-    
+
     /* reset button */
     #restart {
         font-size: 15px;
+    }
+    /* modal */
+    .modal-content {
+        width: 90%;
+    }
+    #myModal h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    #myModal p {
+        font-size: 15px;
+    }
+
+    .close {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+    .topRight {
+        top: 10px;
+        right: 10px;
+        font-size: 22px;
+    }
+
+    #name {
+        width: 90%;
+        padding: 4px;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    #myModal button {
+      font-size: 12px;
+    }
+
+    #myModal button:hover {
+        background-color: rgba(23, 116, 149, 0.8);
     }
 }
